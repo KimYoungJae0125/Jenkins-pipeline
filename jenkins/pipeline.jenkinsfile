@@ -7,15 +7,14 @@ pipeline {
             }
             post {
                 always {
-                    slackSend(color: "good", blocks: test())
+                    slackSend(color: "good", blocks: blocks)
                 }
             }
         }
     }
 }
 
-def test() {
- blocks = [
+blocks = [
 	[
 		"type": "section",
 		"text": [
@@ -39,4 +38,7 @@ def test() {
 		]
 	]
 ]
+
+def test() {
+
 }
