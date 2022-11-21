@@ -2,7 +2,11 @@
 pipeline {
     agent any
     environment {
+        GIT_COMMIT_AUTHOR = sh(script: "git --no-pager show -s --format=%an ${env.GIT_COMMIT}", returnStdout: true, label: "Git commit author").trim();
+        GIT_COMMIT_AUTHOR_EMAIL = sh(script: "git --no-pager show -s --format=%ae ${env.GIT_COMMIT}", returnStdout: true, label: "Git commit author email").trim();
+        GIT_COMMIT_MESSAGE = sh(script: "git --no-pager show -s --format=%B ${env.GIT_COMMIT}", returnStdout: true, label: "Git commit message").trim();
         STAGE1 = "First"
+
     }
     stages {
         stage(STAGE1) {
