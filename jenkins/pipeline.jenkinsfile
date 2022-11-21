@@ -22,7 +22,7 @@ pipeline {
             }
             post {
                 always {
-                    slackSend(color: "good", blocks: $blocksPa)
+                    slackSend(color: "good", blocks: blocksPa)
                 }
             }
         }
