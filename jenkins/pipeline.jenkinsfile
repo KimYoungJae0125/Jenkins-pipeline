@@ -1,15 +1,18 @@
 @Library("utils@main") _
 pipeline {
     agent any
+    environment {
+        STAGE1 = "First"
+    }
     stages {
-        stage("First") {
+        stage(STAGE1) {
             steps {
                 echo "First Stage"
             }
             post {
                 always {
                     script {
-                        sendNotification()
+                        sendNotification(STAGE1)
                     }
                 }
             }
