@@ -1,7 +1,26 @@
 pipeline {
     agent any
-    environment {
-         blocks = [
+    stages {
+        stage("First") {
+            steps {
+                echo "First Stage"
+
+
+            }
+            post {
+                always {
+
+
+                    slackSend(color: "good", blocks: blocks)
+                }
+            }
+        }
+    }
+}
+
+
+
+def blocks = [
                 [
                     "type": "section",
                     "text": [
@@ -25,27 +44,3 @@ pipeline {
                     ]
                 ]
             ]
-    }
-    stages {
-        stage("First") {
-            steps {
-                echo "First Stage"
-
-
-            }
-            post {
-                always {
-
-
-                    slackSend(color: "good", blocks: blocks)
-                }
-            }
-        }
-    }
-}
-
-
-
-def test() {
-
-}
