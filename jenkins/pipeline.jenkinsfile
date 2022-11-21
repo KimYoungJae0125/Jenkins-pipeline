@@ -25,6 +25,7 @@ pipeline {
         stage(STAGE2) {
             steps {
                 echo "Second Stage"
+                exit 0
             }
             post {
                 always {
