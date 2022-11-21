@@ -7,7 +7,7 @@ pipeline {
             }
             post {
                 always {
-                    slackSend(color: "good", blocks: blocks)
+                    slackSend(color: "good", blocks: blocksPa)
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
 
 
 
-def blocks = [
+def blocksPa = [
                 [
                     "type": "section",
                     "text": [
