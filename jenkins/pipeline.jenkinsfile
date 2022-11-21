@@ -2,8 +2,13 @@ pipeline {
     agent any
     stages {
         stage("First") {
-            steps{
+            steps {
                 echo "First Stage"
+            }
+            post {
+                always {
+                    slackSend(color: "good", message: "First Stage")
+                }
             }
         }
     }
