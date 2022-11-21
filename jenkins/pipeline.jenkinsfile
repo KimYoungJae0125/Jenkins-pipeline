@@ -5,19 +5,19 @@ pipeline {
             steps {
                 echo "First Stage"
                 script {
-                    blocksPa = {
-                                    {
+                    blocksPa = [
+                                    [
                                         "type": "section",
-                                        "text": {
+                                        "text": [
                                             "type": "mrkdwn",
                                             "text": "Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\n\n *Please select a restaurant:*"
-                                        }
-                                    },
-                                    {
+                                        ]
+                                    ],
+                                    [
                                         "type": "divider"
-                                    }
+                                    ]
 
-                                }
+                                ]
                 }
             }
             post {
