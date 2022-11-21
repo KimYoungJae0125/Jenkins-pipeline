@@ -7,7 +7,7 @@ pipeline {
             }
             post {
                 always {
-                    slackSend(color: "good", block: test())
+                    slackSend(color: "good", blocks: test())
                 }
             }
         }
