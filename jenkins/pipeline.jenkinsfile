@@ -4,13 +4,9 @@ pipeline {
         stage("First") {
             steps {
                 echo "First Stage"
-
-
             }
             post {
                 always {
-
-
                     slackSend(color: "good", blocks: blocks)
                 }
             }
@@ -20,7 +16,7 @@ pipeline {
 
 
 
-def blocks = [
+ blocks = [
                 [
                     "type": "section",
                     "text": [
